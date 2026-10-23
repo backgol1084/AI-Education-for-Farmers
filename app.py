@@ -31,7 +31,7 @@ else:
             with st.spinner("생각 중입니다..."):
                 try:
                     response = client.models.generate_content(
-                        model="gemini-2.5-flash",
+                        model="gemini-3.8-flash",
                         contents=prompt,
                     )
                     reply = response.text
