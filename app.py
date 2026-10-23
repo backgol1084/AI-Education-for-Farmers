@@ -4,9 +4,9 @@ from google import genai
 # 수정된 올바른 설정 함수
 st.set_page_config(page_title="제미나이 체험 실습장", page_icon="🤖")
 
-st.title("🤖 생성형 AI 제미나이(Gemini) 체험하기")
+st.title("🤖 순천시 농업인 생성형 AI 제미나이(Gemini) 체험")
 st.write("로그인 없이 간편하게 제미나이의 성능을 테스트해 보세요!")
-
+st.write("이 사이트는 AI 테스트를 위해 임시로 생성된 사이트 입니다.")
 # Secrets에서 API 키 안전하게 가져오기
 API_KEY = st.secrets.get("GEMINI_API_KEY", "")
 
