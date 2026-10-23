@@ -1,15 +1,17 @@
 import streamlit as st
 from google import genai
 
-st.set_page_title("제미나이 체험 실습장", page_icon="🤖")
+# 수정된 올바른 설정 함수
+st.set_page_config(page_title="제미나이 체험 실습장", page_icon="🤖")
+
 st.title("🤖 생성형 AI 제미나이(Gemini) 체험하기")
 st.write("로그인 없이 간편하게 제미나이의 성능을 테스트해 보세요!")
 
-# API 키 입력 (또는 Streamlit Secrets 사용)
-API_KEY = st.secrets.get("GEMINI_API_KEY", "")  # <- 본인의 Google AI Studio API 키로 변경하세요
+# Secrets에서 API 키 안전하게 가져오기
+API_KEY = st.secrets.get("GEMINI_API_KEY", "")
 
-if API_KEY == st.secrets.get("GEMINI_API_KEY", "") or not API_KEY:
-    st.warning("⚠️ API 키가 설정되지 않았습니다.")
+if not API_KEY:
+    st.warning("⚠️ Streamlit Secrets에 GEMINI_API_KEY가 설정되지 않았습니다.")
 else:
     client = genai.Client(api_key=API_KEY)
 
